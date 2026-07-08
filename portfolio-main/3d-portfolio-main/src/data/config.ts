@@ -1,14 +1,17 @@
 const config = {
-  title: "Nandeesh Shetty | Full-Stack Web Developer",
+  title: "Nandeesh Shetty | Portfolio",
   description: {
-    long: "Explore the portfolio of Nandeesh Shetty, a full-stack web developer and Computer Science undergraduate specializing in MERN stack, Java Spring Boot, and modern web technologies. Discover my latest projects including real-time chat apps, event management systems, and more. Let's build something amazing together!",
+    long: "Official portfolio of Nandeesh Shetty, a full-stack web developer and Computer Science undergraduate specializing in MERN stack, Java Spring Boot, and modern web technologies. Explore Nandeesh Shetty's projects, skills, certifications, resume, and contact information.",
     short:
-      "Discover the portfolio of Nandeesh Shetty, a full-stack web developer creating innovative web applications and projects.",
+      "Official portfolio of Nandeesh Shetty with projects, skills, resume, and contact information.",
   },
   objective:
     "Motivated Computer Science undergraduate with hands-on experience in full-stack web development and a strong foundation in problem-solving. Eager to contribute to innovative tech projects while continuously growing my skills in software engineering and modern web technologies.",
   keywords: [
     "Nandeesh Shetty",
+    "Nandeesh Shetty portfolio",
+    "Nandeesh Shetty developer",
+    "Nandeesh Shetty web developer",
     "portfolio",
     "full-stack developer",
     "web development",
@@ -27,7 +30,7 @@ const config = {
   author: "Nandeesh Shetty",
   email: "shettynandeesh94@gmail.com",
   phone: "+91 9916112293",
-  site: "https://nandeesh-shetty.vercel.app",
+  site: "https://nandeeshshetty.vercel.app",
 
   // for github stars button — set repo to empty to hide the button
   githubUsername: "shettynandeesh94-cpu",

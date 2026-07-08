@@ -25,14 +25,22 @@ const unbounded = Unbounded({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(config.site),
   title: config.title,
   description: config.description.long,
   keywords: config.keywords,
   authors: [{ name: config.author }],
+  creator: config.author,
+  publisher: config.author,
+  applicationName: "Nandeesh Shetty Portfolio",
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     title: config.title,
     description: config.description.short,
     url: config.site,
+    siteName: "Nandeesh Shetty Portfolio",
     images: [
       {
         url: config.ogImg,
@@ -41,6 +49,7 @@ export const metadata: Metadata = {
         alt: "Portfolio preview",
       },
     ],
+    locale: "en_US",
     type: "website",
   },
   twitter: {
@@ -52,6 +61,31 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
+  },
+};
+
+const personJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: config.author,
+  url: config.site,
+  email: config.email,
+  jobTitle: "Full-Stack Web Developer",
+  sameAs: [config.social.linkedin, config.social.github],
+  knowsAbout: [
+    "Full-stack web development",
+    "MERN stack",
+    "React",
+    "Next.js",
+    "Node.js",
+    "Java Spring Boot",
+    "MongoDB",
+    "MySQL",
+  ],
+  mainEntityOfPage: {
+    "@type": "WebSite",
+    name: "Nandeesh Shetty Portfolio",
+    url: config.site,
   },
 };
 
@@ -76,6 +110,10 @@ export default function RootLayout({
         <link rel="preconnect" href="https://unpkg.com" crossOrigin="anonymous" />
       </head>
       <body suppressHydrationWarning>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+        />
         <BackgroundVideo />
         <Providers>
           <SiteFrame>{children}</SiteFrame>
