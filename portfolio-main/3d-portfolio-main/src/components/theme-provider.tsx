@@ -9,7 +9,7 @@ import {
 } from "react";
 import { useServerInsertedHTML } from "next/navigation";
 
-type Theme = "dark" | "light";
+export type Theme = "dark" | "light";
 
 interface ThemeContextValue {
   theme: Theme;
