@@ -1,0 +1,4 @@
+- [ ] Update next.config.mjs: remove unsupported `eslint` key (fix Next lint warning)
+- [ ] Update next.config.mjs: remove custom Cache-Control headers overrides (fix dev behavior warning)
+- [ ] Fix 404s for backgrounds/realtime-chat.jpg, event-management.jpg, cinerec.jpg by matching actual filenames under public/assets/backgrounds/
+- [ ] Verify with `npm run dev` and ensure no 404s for those background assets
