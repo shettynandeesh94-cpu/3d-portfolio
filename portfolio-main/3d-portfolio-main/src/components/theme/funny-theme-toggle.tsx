@@ -20,10 +20,12 @@ export default function FunnyThemeToggle({
   const ref = React.useRef<HTMLButtonElement>(null);
 
   const toggleTheme = async (newTheme: Theme, event?: React.MouseEvent) => {
+    const nextTheme: Theme = newTheme === "light" ? "light" : "dark";
+
     // @ts-ignore
     if (!document.startViewTransition || !event) {
       // @ts-ignore
-      setTheme(newTheme);
+      setTheme(nextTheme);
       return;
     }
 
@@ -39,7 +41,7 @@ export default function FunnyThemeToggle({
     // @ts-ignore
     const transition = document.startViewTransition(() => {
       flushSync(() => {
-        setTheme(newTheme);
+        setTheme(nextTheme);
       });
     });
 
