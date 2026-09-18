@@ -139,6 +139,16 @@ const PROJECT_SKILLS = {
     fg: "white",
     icon: <span className="text-xs font-bold">🎈</span>,
   },
+  ts: brand("TypeScript", "typescript-mono.svg"),
+  tailwind: brand("Tailwind CSS", "tailwind-css-mono.svg"),
+  shadcn: brand("Shadcn UI", "shadcn-ui-mono.svg"),
+  nextjs: brand("Next.js", "nextdotjs-mono.svg"),
+  ai: {
+    title: "AI & LLM",
+    bg: "black",
+    fg: "white",
+    icon: <span className="text-xs font-bold">🤖</span>,
+  },
   nlp: {
     title: "NLP",
     bg: "black",
@@ -161,6 +171,76 @@ export type Project = {
 };
 
 const projects: Project[] = [
+  {
+    id: "govtwatch-ai",
+    category: "AI & Automation Platform",
+    date: "2026",
+    title: "GovtWatch-AI",
+    src: "/assets/projects-screenshots/portfolio/landing.png",
+    screenshots: [],
+    skills: {
+      frontend: [
+        PROJECT_SKILLS.react,
+        PROJECT_SKILLS.ts,
+        PROJECT_SKILLS.tailwind,
+        PROJECT_SKILLS.shadcn,
+      ],
+      backend: [
+        PROJECT_SKILLS.python,
+        PROJECT_SKILLS.ai,
+        PROJECT_SKILLS.nlp,
+      ],
+    },
+    live: "https://govtwatch-ai.vercel.app/",
+    github: "#",
+    get content() {
+      return (
+        <div>
+          <TypographyP className="font-mono text-2xl text-center">
+            AI-powered real-time government website and regulatory document change monitoring platform.
+          </TypographyP>
+          <TypographyP className="font-mono ">
+            GovtWatch-AI monitors thousands of Indian central and state government portals around the clock. Powered by intelligent crawlers and generative AI models, the platform detects policy updates in real time, generates concise executive summaries, performs side-by-side document diffs, and alerts compliance and legal teams instantly.
+          </TypographyP>
+          <ProjectsLinks live={this.live} repo={this.github} />
+
+          {/* ── LIVE DEMO ── */}
+          <TypographyH3 className="my-4 mt-8 flex items-center gap-2">
+            <span className="inline-block w-2 h-2 rounded-full bg-green-400 animate-pulse" />
+            Live Demo
+          </TypographyH3>
+          <p className="font-mono mb-4 text-sm text-muted-foreground">
+            Explore the live platform directly below — track government websites, view AI summaries, and monitor policy updates.
+          </p>
+          <LiveDemoEmbed
+            url="https://govtwatch-ai.vercel.app/"
+            title="GovtWatch-AI"
+          />
+
+          <TypographyH3 className="my-4 mt-10">
+            Automated Website & Policy Monitoring
+          </TypographyH3>
+          <p className="font-mono mb-2">
+            Tracks government websites (such as SEBI, MeitY, DoE, GeM, MRPL, and state portals) with automated recurring scan intervals, instantly catching modifications, gazettes, and new circulars.
+          </p>
+
+          <TypographyH3 className="my-4 mt-8">
+            AI-Powered Summaries & Document Diffs
+          </TypographyH3>
+          <p className="font-mono mb-2">
+            Converts dense multi-page government notifications and PDFs into concise, key-point summaries with risk assessment scores and side-by-side line level change comparisons.
+          </p>
+
+          <TypographyH3 className="my-4 mt-8">
+            Smart Alerts & Analytics
+          </TypographyH3>
+          <p className="font-mono mb-2">
+            Delivers critical threshold-based alerts across email, in-app notifications, and webhooks while visualizing policy update trends across ministries, departments, and timelines.
+          </p>
+        </div>
+      );
+    },
+  },
   {
     id: "realtime-chat",
     category: "Full-Stack Application",
