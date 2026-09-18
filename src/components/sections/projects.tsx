@@ -22,7 +22,7 @@ const ProjectsSection = () => {
   return (
     <SectionWrapper id="projects" className="max-w-7xl mx-auto md:min-h-[130vh] px-4">
       <SectionHeader id="projects" title="Projects" />
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
         {projects.map((project) => (
           <ProjectCard key={project.id} project={project} />
         ))}
@@ -34,11 +34,11 @@ const ProjectsSection = () => {
 const ProjectCard = ({ project }: { project: Project }) => {
   const hasLive = project.live && project.live !== "#";
   return (
-    <div className="flex items-center justify-center w-full">
+    <div className="flex items-center justify-center">
       <ResponsiveDialog>
         <ResponsiveDialogTrigger className="bg-transparent flex justify-center w-full">
           <div
-            className="group relative w-full max-w-[480px] h-auto rounded-lg overflow-hidden ring-1 ring-white/5"
+            className="group relative w-full max-w-[400px] h-auto rounded-lg overflow-hidden ring-1 ring-white/5"
             style={{ aspectRatio: "3/2" }}
           >
             {/* `src` can be any aspect ratio (tall pages pan, normal ones fit);
