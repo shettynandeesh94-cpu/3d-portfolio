@@ -336,9 +336,10 @@ const projects: Project[] = [
         PROJECT_SKILLS.shadcn,
       ],
       backend: [
-        PROJECT_SKILLS.python,
-        PROJECT_SKILLS.ai,
-        PROJECT_SKILLS.nlp,
+        PROJECT_SKILLS.node,
+        PROJECT_SKILLS.express,
+        PROJECT_SKILLS.mongo,
+        PROJECT_SKILLS.jwt,
       ],
     },
     live: "https://govtwatch-ai.vercel.app/",
@@ -347,10 +348,10 @@ const projects: Project[] = [
       return (
         <div>
           <TypographyP className="font-mono text-2xl text-center">
-            AI-powered real-time government website and regulatory document change monitoring platform.
+            An intelligent, AI-powered government website and regulatory document monitoring platform.
           </TypographyP>
           <TypographyP className="font-mono ">
-            GovtWatch-AI monitors thousands of Indian central and state government portals around the clock. Powered by intelligent crawlers and generative AI models, the platform detects policy updates in real time, generates concise executive summaries, performs side-by-side document diffs, and alerts compliance and legal teams instantly.
+            GovtWatch-AI automatically tracks, scrapes, and analyzes updates from critical Indian Government portals (including SEBI, MRPL, GeM, Department of Expenditure, and MeitY) to detect policy changes, newly uploaded circulars, and specific keywords so compliance teams never miss a critical regulatory update.
           </TypographyP>
           <ProjectsLinks live={this.live} repo={this.github} />
 
@@ -368,24 +369,31 @@ const projects: Project[] = [
           />
 
           <TypographyH3 className="my-4 mt-10">
-            Automated Website & Policy Monitoring
+            🤖 Automated Web Scraping & Ingestion
           </TypographyH3>
           <p className="font-mono mb-2">
-            Tracks government websites (such as SEBI, MeitY, DoE, GeM, MRPL, and state portals) with automated recurring scan intervals, instantly catching modifications, gazettes, and new circulars.
+            Daily automated monitoring of designated Indian government portals (SEBI, MRPL, GeM, DoE, MeitY) with Puppeteer, Cheerio, and Node-Cron to detect new tenders, notifications, gazettes, and policy circulars. Downloads and extracts text from complex multi-page PDFs while preserving document structure.
           </p>
 
           <TypographyH3 className="my-4 mt-8">
-            AI-Powered Summaries & Document Diffs
+            🔍 Intelligent Change Detection & Diffs
           </TypographyH3>
           <p className="font-mono mb-2">
-            Converts dense multi-page government notifications and PDFs into concise, key-point summaries with risk assessment scores and side-by-side line level change comparisons.
+            Compares historical versions of documents and webpages to highlight additions, modifications, and removals with side-by-side line level comparisons and AI-generated summaries.
           </p>
 
           <TypographyH3 className="my-4 mt-8">
-            Smart Alerts & Analytics
+            🎯 Keyword Tracking & Multi-Channel Alerts
           </TypographyH3>
           <p className="font-mono mb-2">
-            Delivers critical threshold-based alerts across email, in-app notifications, and webhooks while visualizing policy update trends across ministries, departments, and timelines.
+            Define custom keywords (e.g., "Refinery", "Tax", "Compliance") and receive immediate automated email and dashboard notifications the moment they appear on any monitored government site.
+          </p>
+
+          <TypographyH3 className="my-4 mt-8">
+            📊 Comprehensive Dashboard & 🛡️ Secure Admin Panel
+          </TypographyH3>
+          <p className="font-mono mb-2">
+            Built with React, TypeScript, Tailwind CSS, and Shadcn UI to visualize recent changes, download PDF/CSV reports with jsPDF, manage monitored URLs, and enforce Role-Based Access Control (RBAC) with audit logs.
           </p>
         </div>
       );
