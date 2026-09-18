@@ -76,7 +76,7 @@ const HeroSection = () => {
                     )}
                   >
                     <p className="text-base sm:text-xl font-semibold text-foreground/90">
-                      CS Undergraduate · Full-Stack Developer
+                      CS Undergraduate · Full-Stack & AI/ML Engineer
                     </p>
                     <span className="mt-3 block text-xs sm:text-base md:text-lg leading-relaxed whitespace-normal text-muted-foreground">
                       {config.objective}

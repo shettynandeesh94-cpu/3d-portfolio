@@ -20,28 +20,27 @@ const HeroSection = () => {
   const { isLoading } = usePreloader();
 
   return (
-    <SectionWrapper id="hero" className={cn("relative w-full h-screen")}>
-      <div className="grid md:grid-cols-2">
+    <SectionWrapper id="hero" className={cn("relative w-full min-h-screen h-auto md:h-screen")}>
+      <div className="grid grid-cols-1 md:grid-cols-2 min-h-full">
         <div
           className={cn(
-            "h-[calc(100dvh-3rem)] md:h-[calc(100dvh-4rem)] z-[2]",
+            "min-h-[calc(100dvh-3rem)] md:h-[calc(100dvh-4rem)] z-[2]",
             "col-span-1",
-            "flex flex-col justify-start md:justify-center items-center md:items-start",
-            "pt-28 sm:pb-16 md:p-20 lg:p-24 xl:p-28"
+            "flex flex-col justify-start md:justify-center items-center md:items-start text-center md:text-left",
+            "pt-24 pb-16 px-4 sm:px-8 md:p-20 lg:p-24 xl:p-28"
           )}
         >
           {!isLoading && (
-            <div className="flex flex-col">
-              <div>
+            <div className="flex flex-col items-center md:items-start w-full max-w-full">
+              <div className="w-full">
                 <BlurIn delay={0.7}>
                   <p
                     className={cn(
-                      "md:self-start mt-4 font-medium text-md text-slate-500 dark:text-zinc-400",
-                      "cursor-default sm:text-xl md:text-xl whitespace-nowrap bg-clip-text "
+                      "md:self-start mt-2 sm:mt-4 font-medium text-sm sm:text-xl text-slate-500 dark:text-zinc-400",
+                      "cursor-default bg-clip-text"
                     )}
                   >
                     Hi, I am
-                    <br className="md:hidden" />
                   </p>
                 </BlurIn>
 
@@ -50,13 +49,13 @@ const HeroSection = () => {
                     <TooltipTrigger asChild>
                       <h1
                         className={cn(
-                          "-ml-[6px] leading-none text-transparent text-slate-800 text-left",
-                          "font-bold text-7xl md:text-7xl lg:text-8xl xl:text-9xl",
-                          "cursor-default text-edge-outline font-display "
+                          "leading-none text-slate-800 dark:text-slate-100 text-center md:text-left tracking-tight",
+                          "font-bold text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl mt-2 mb-3",
+                          "cursor-default text-edge-outline font-display break-words"
                         )}
                       >
                         {config.author.split(" ")[0]}
-                        <br className="md:block hiidden" />
+                        <br className="hidden md:block" />{" "}
                         {config.author.split(" ")[1]}
                       </h1>
                     </TooltipTrigger>
@@ -68,41 +67,44 @@ const HeroSection = () => {
                     </TooltipContent>
                   </Tooltip>
                 </BlurIn>
-                {/* <div className="md:block hidden bg-gradient-to-r from-zinc-300/0 via-zinc-300/50 to-zinc-300/0 w-screen h-px animate-fade-right animate-glow" /> */}
+
                 <BlurIn delay={1.2}>
-                  <p
+                  <div
                     className={cn(
-                      "md:self-start md:mt-4 max-w-xl font-medium text-md text-slate-500 dark:text-zinc-400",
-                      "cursor-default sm:text-xl md:text-xl bg-clip-text "
+                      "md:self-start md:mt-4 max-w-xl font-medium text-sm sm:text-xl text-slate-500 dark:text-zinc-400",
+                      "cursor-default bg-clip-text"
                     )}
                   >
-                    CS Undergraduate · Full-Stack Developer
-                    <span className="mt-4 block text-sm sm:text-base md:text-lg leading-relaxed whitespace-normal">
+                    <p className="text-base sm:text-xl font-semibold text-foreground/90">
+                      CS Undergraduate · Full-Stack & AI/ML Engineer
+                    </p>
+                    <span className="mt-3 block text-xs sm:text-base md:text-lg leading-relaxed whitespace-normal text-muted-foreground">
                       {config.objective}
                     </span>
-                  </p>
+                  </div>
                 </BlurIn>
               </div>
-              <div className="mt-8 flex flex-col gap-3 w-fit">
+
+              <div className="mt-6 sm:mt-8 flex flex-col sm:flex-row items-center gap-3 w-full sm:w-fit">
                 <Link
                   href={"/resume"}
                   target="_blank"
-                  className="flex-1"
+                  className="w-full sm:w-auto"
                 >
-                  <BoxReveal delay={2} width="100%" >
-                    <Button className="flex items-center gap-2 w-full">
-                      <File size={24} />
+                  <BoxReveal delay={2} width="100%">
+                    <Button className="flex items-center justify-center gap-2 w-full px-6">
+                      <File size={20} />
                       <p>Resume</p>
                     </Button>
                   </BoxReveal>
                 </Link>
-                <div className="md:self-start flex gap-3">
+                <div className="flex items-center gap-3 w-full sm:w-auto justify-center">
                   <Tooltip delayDuration={300}>
                     <TooltipTrigger asChild>
-                      <Link href={"#contact"}>
+                      <Link href={"#contact"} className="flex-1 sm:flex-none">
                         <Button
                           variant={"outline"}
-                          className="block w-full overflow-hidden"
+                          className="w-full sm:w-auto px-6"
                         >
                           Hire Me
                         </Button>
@@ -112,14 +114,14 @@ const HeroSection = () => {
                       <p>pls 🥹 🙏</p>
                     </TooltipContent>
                   </Tooltip>
-                  <div className="flex items-center h-full gap-2">
+                  <div className="flex items-center gap-2">
                     <Link
                       href={config.social.github}
                       target="_blank"
                       className="cursor-can-hover"
                     >
-                      <Button variant={"outline"}>
-                        <SiGithub size={24} />
+                      <Button variant={"outline"} size="icon" className="w-10 h-10">
+                        <SiGithub size={20} />
                       </Button>
                     </Link>
                     <Link
@@ -127,8 +129,8 @@ const HeroSection = () => {
                       target="_blank"
                       className="cursor-can-hover"
                     >
-                      <Button variant={"outline"}>
-                        <SiLinkedin size={24} />
+                      <Button variant={"outline"} size="icon" className="w-10 h-10">
+                        <SiLinkedin size={20} />
                       </Button>
                     </Link>
                   </div>
@@ -137,9 +139,9 @@ const HeroSection = () => {
             </div>
           )}
         </div>
-        <div className="grid col-span-1"></div>
+        <div className="hidden md:grid col-span-1"></div>
       </div>
-      <div className="absolute bottom-10 left-[50%] translate-x-[-50%]">
+      <div className="absolute bottom-6 md:bottom-10 left-[50%] -translate-x-1/2 pointer-events-none">
         <ScrollDownIcon />
       </div>
     </SectionWrapper>

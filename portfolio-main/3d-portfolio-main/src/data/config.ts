@@ -1,23 +1,29 @@
 const config = {
   title: "Nandeesh Shetty | Portfolio",
   description: {
-    long: "Official portfolio of Nandeesh Shetty, a full-stack web developer and Computer Science undergraduate specializing in MERN stack, Java Spring Boot, and modern web technologies. Explore Nandeesh Shetty's projects, skills, certifications, resume, and contact information.",
+    long: "Official portfolio of Nandeesh Shetty, a Full-Stack & AI/ML Engineer and Computer Science undergraduate specializing in full-stack development, AI/ML engineering, LLM architectures, and modern web technologies. Explore Nandeesh Shetty's projects, skills, certifications, resume, and contact information.",
     short:
-      "Official portfolio of Nandeesh Shetty with projects, skills, resume, and contact information.",
+      "Official portfolio of Nandeesh Shetty, Full-Stack & AI/ML Engineer with projects, skills, resume, and contact information.",
   },
   objective:
-    "Motivated Computer Science undergraduate with hands-on experience in full-stack web development and a strong foundation in problem-solving. Eager to contribute to innovative tech projects while continuously growing my skills in software engineering and modern web technologies.",
+    "Motivated Computer Science undergraduate with hands-on experience in Full-Stack Development and AI/ML Engineering. Skilled in developing intelligent AI-driven applications, scalable web platforms, and machine learning workflows with a strong foundation in problem-solving.",
   keywords: [
     "Nandeesh Shetty",
     "Nandeesh Shetty portfolio",
     "Nandeesh Shetty developer",
     "Nandeesh Shetty web developer",
+    "Nandeesh Shetty AI engineer",
     "portfolio",
     "full-stack developer",
+    "AI/ML engineer",
+    "machine learning",
+    "AI engineer",
+    "LLM",
     "web development",
     "MERN stack",
     "React",
     "Node.js",
+    "Python",
     "Java",
     "Spring Boot",
     "MongoDB",
