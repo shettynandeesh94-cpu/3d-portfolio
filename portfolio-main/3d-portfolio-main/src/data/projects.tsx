@@ -143,6 +143,25 @@ const PROJECT_SKILLS = {
   tailwind: brand("Tailwind CSS", "tailwind-css-mono.svg"),
   shadcn: brand("Shadcn UI", "shadcn-ui-mono.svg"),
   nextjs: brand("Next.js", "nextdotjs-mono.svg"),
+  framerMotion: brand("Framer Motion", "motion.svg"),
+  vite: {
+    title: "Vite",
+    bg: "black",
+    fg: "white",
+    icon: <span className="text-xs font-bold">⚡</span>,
+  },
+  gemini: {
+    title: "Google Gemini AI",
+    bg: "black",
+    fg: "white",
+    icon: <span className="text-xs font-bold">✨</span>,
+  },
+  webaudio: {
+    title: "Web Audio API",
+    bg: "black",
+    fg: "white",
+    icon: <span className="text-xs font-bold">🎙️</span>,
+  },
   ai: {
     title: "AI & LLM",
     bg: "black",
@@ -250,78 +269,6 @@ const projects: Project[] = [
     },
   },
   {
-    id: "event-management",
-    category: "Web Application",
-    date: "Sept 2025",
-    title: "College Event Management System",
-    src: "/assets/projects-screenshots/portfolio/landing.png",
-    screenshots: [],
-    skills: {
-      frontend: [
-        PROJECT_SKILLS.html,
-        PROJECT_SKILLS.css,
-      ],
-      backend: [
-        PROJECT_SKILLS.java,
-        PROJECT_SKILLS.springboot,
-        PROJECT_SKILLS.mysql,
-      ],
-    },
-    live: "https://event-registration-system-a5l5.onrender.com/",
-    github: "https://github.com/shettynandeesh94-cpu/college-event-register",
-    get content() {
-      return (
-        <div>
-          <TypographyP className="font-mono text-2xl text-center">
-            A web application to manage college events including registration,
-            scheduling, and participant tracking.
-          </TypographyP>
-          <TypographyP className="font-mono ">
-            Developed a comprehensive web application for managing college
-            events, built with Java and Spring Boot on the backend with MySQL
-            for data storage. The system streamlines the entire event lifecycle
-            from creation to completion.
-          </TypographyP>
-          <ProjectsLinks live={this.live} repo={this.github} />
-
-          {/* ── LIVE DEMO ── */}
-          <TypographyH3 className="my-4 mt-8 flex items-center gap-2">
-            <span className="inline-block w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-            Live Demo
-          </TypographyH3>
-          <p className="font-mono mb-4 text-sm text-muted-foreground">
-            Interact with the live event registration system — browse upcoming
-            events and register directly from here.
-          </p>
-          <LiveDemoEmbed
-            url="https://event-registration-system-a5l5.onrender.com/"
-            title="College Event Management"
-          />
-
-          <TypographyH3 className="my-4 mt-10">
-            Event Management
-          </TypographyH3>
-          <p className="font-mono mb-2">
-            The platform enables administrators to create, schedule, and manage
-            college events with full CRUD operations. Event organizers can set
-            event details, dates, venues, and capacity limits while participants
-            can browse and register for upcoming events.
-          </p>
-
-          <TypographyH3 className="my-4 mt-8">
-            User Authentication & Database
-          </TypographyH3>
-          <p className="font-mono mb-2">
-            Implemented user authentication and role-based access control using
-            Spring Boot security. The MySQL database handles all data
-            persistence including user profiles, event details, registrations,
-            and participant tracking with proper relational schema design.
-          </p>
-        </div>
-      );
-    },
-  },
-  {
     id: "govtwatch-ai",
     category: "AI & Automation Platform",
     date: "2026",
@@ -394,6 +341,93 @@ const projects: Project[] = [
           </TypographyH3>
           <p className="font-mono mb-2">
             Built with React, TypeScript, Tailwind CSS, and Shadcn UI to visualize recent changes, download PDF/CSV reports with jsPDF, manage monitored URLs, and enforce Role-Based Access Control (RBAC) with audit logs.
+          </p>
+        </div>
+      );
+    },
+  },
+  {
+    id: "examgen-ai",
+    category: "AI Recruitment & Assessment Engine",
+    date: "2026",
+    title: "ExamGen AI Pro",
+    src: "/assets/projects-screenshots/portfolio/landing.png",
+    screenshots: [],
+    skills: {
+      frontend: [
+        PROJECT_SKILLS.react,
+        PROJECT_SKILLS.vite,
+        PROJECT_SKILLS.tailwind,
+        PROJECT_SKILLS.framerMotion,
+        PROJECT_SKILLS.webaudio,
+      ],
+      backend: [
+        PROJECT_SKILLS.gemini,
+        PROJECT_SKILLS.node,
+        PROJECT_SKILLS.express,
+        PROJECT_SKILLS.mongo,
+        PROJECT_SKILLS.jwt,
+      ],
+    },
+    live: "https://exam-gen-ai-smoky.vercel.app/",
+    github: "#",
+    get content() {
+      return (
+        <div>
+          <TypographyP className="font-mono text-2xl text-center">
+            Next-Generation AI Practice Exam Generator, Automated Assessment Engine & Interactive Recruitment Simulator.
+          </TypographyP>
+          <TypographyP className="font-mono ">
+            ExamGen AI Pro is a comprehensive, production-grade AI learning and placement platform. It enables students to upload reference textbooks/notes (PDFs), auto-extract topic hierarchies, generate custom mock exams (MCQs, short answer, long answer, and scenario questions) using Google Gemini AI, and grade descriptive answers in real time with granular alignment metrics. Additionally, it features an immersive, standalone AI Mock Interview Workspace simulating real-world recruiter assessments.
+          </TypographyP>
+          <ProjectsLinks live={this.live} repo={this.github} />
+
+          {/* ── LIVE DEMO ── */}
+          <TypographyH3 className="my-4 mt-8 flex items-center gap-2">
+            <span className="inline-block w-2 h-2 rounded-full bg-green-400 animate-pulse" />
+            Live Demo
+          </TypographyH3>
+          <p className="font-mono mb-4 text-sm text-muted-foreground">
+            Experience the live application right here — generate exams, practice mock interviews, and test speaking telemetry.
+          </p>
+          <LiveDemoEmbed
+            url="https://exam-gen-ai-smoky.vercel.app/"
+            title="ExamGen AI Pro"
+          />
+
+          <TypographyH3 className="my-4 mt-10">
+            🌟 Dynamic Exam Synthesis & PDF Ingestion
+          </TypographyH3>
+          <p className="font-mono mb-2">
+            Parses, splits, and catalogs text chunks from uploaded subject materials (PDF textbooks and lecture notes). Generates multi-format questions including Multiple Choice, Conceptual Short Answer, Comprehensive Long Answer, and Scenario-based Case Studies tailored to selected difficulty tiers (Easy, Medium, Hard).
+          </p>
+
+          <TypographyH3 className="my-4 mt-8">
+            ⚡ AI-Powered Real-Time Grading, Scoring & Feedback
+          </TypographyH3>
+          <p className="font-mono mb-2">
+            Evaluates descriptive and subjective student submissions with real-time Google Gemini AI autograding. The interactive diagnostics dashboard visualizes alignment scores, gaps in conceptual understanding, and tailored suggestions for improvement.
+          </p>
+
+          <TypographyH3 className="my-4 mt-8">
+            🎙️ Immersive Recruiter Mock Interview Workspace
+          </TypographyH3>
+          <p className="font-mono mb-2">
+            Features a dedicated full-screen placement-room viewport with an animated professional AI recruiter avatar powered by Framer Motion. The avatar exhibits lifelike breathing, smart eyelid blinking, audio-synchronized mouth movement during speech synthesis (TTS), thinking orbits, and listening states during voice-to-text recording. Includes a live Web Audio visualizer rendering cyan waveform frequency telemetry in canvas.
+          </p>
+
+          <TypographyH3 className="my-4 mt-8">
+            📊 Interactive Telemetry HUD (Speaking Biometrics)
+          </TypographyH3>
+          <p className="font-mono mb-2">
+            Real-time biometric analytics including Speaking Tempo (Words-Per-Minute estimation), Tone & Emotion detector (Confident, Analytical, Attentive), Speech Clarity & Conceptual Alignment percentages matching response against answer rubrics, and a ticking elapsed question timer.
+          </p>
+
+          <TypographyH3 className="my-4 mt-8">
+            💻 Full-Stack Architecture & Security
+          </TypographyH3>
+          <p className="font-mono mb-2">
+            Built with React 18, Vite, Tailwind CSS, Framer Motion, and Lucide React on the frontend, with Node.js, Express.js, MongoDB, JWT authentication, and Google Gemini API integration on the backend.
           </p>
         </div>
       );
