@@ -77,20 +77,22 @@ const ProjectCard = ({ project }: { project: Project }) => {
 
         <ResponsiveDialogContent className="md:max-w-5xl md:h-[90vh] md:!flex md:flex-col md:overflow-hidden md:p-0 md:gap-0">
           {/* Sticky header */}
-          <div className="shrink-0 border-b border-border bg-background/80 backdrop-blur-sm px-8 py-5">
-            <div className="flex items-center justify-between gap-4">
-              <div className="flex items-center gap-4 min-w-0">
-                <ResponsiveDialogTitle className="font-display text-xl md:text-2xl font-bold text-foreground tracking-tight truncate">
+          <div className="shrink-0 border-b border-border bg-background/80 backdrop-blur-sm px-4 sm:px-8 py-4 sm:py-5">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 sm:gap-4">
+              <div className="flex flex-wrap items-center gap-2 sm:gap-4 min-w-0">
+                <ResponsiveDialogTitle className="font-display text-lg sm:text-xl md:text-2xl font-bold text-foreground tracking-tight truncate max-w-full">
                   {project.title}
                 </ResponsiveDialogTitle>
-                <span className="shrink-0 text-[11px] uppercase tracking-widest text-muted-foreground border border-border rounded-full px-3 py-0.5">
-                  {project.category}
-                </span>
-                <span className="shrink-0 text-[11px] uppercase tracking-widest text-muted-foreground border border-border rounded-full px-3 py-0.5">
-                  {project.date}
-                </span>
+                <div className="flex items-center gap-2">
+                  <span className="shrink-0 text-[10px] sm:text-[11px] uppercase tracking-widest text-muted-foreground border border-border rounded-full px-2.5 sm:px-3 py-0.5">
+                    {project.category}
+                  </span>
+                  <span className="shrink-0 text-[10px] sm:text-[11px] uppercase tracking-widest text-muted-foreground border border-border rounded-full px-2.5 sm:px-3 py-0.5">
+                    {project.date}
+                  </span>
+                </div>
               </div>
-              <div className="shrink-0 flex items-center gap-4">
+              <div className="shrink-0 flex items-center gap-3 sm:gap-4 self-end sm:self-auto">
                 {project.github && project.github !== "#" && (
                   <Link
                     href={project.github}
@@ -102,7 +104,7 @@ const ProjectCard = ({ project }: { project: Project }) => {
                 )}
                 {project.live && project.live !== "#" && (
                   <Link href={project.live} target="_blank">
-                    <button className="group flex items-center gap-2 bg-primary text-primary-foreground text-sm font-medium px-4 py-1.5 rounded-full hover:bg-primary/80 transition-colors">
+                    <button className="group flex items-center gap-1.5 sm:gap-2 bg-primary text-primary-foreground text-xs sm:text-sm font-medium px-3 sm:px-4 py-1.5 rounded-full hover:bg-primary/80 transition-colors">
                       Visit
                       <ArrowUpRight className="w-3.5 h-3.5 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform" />
                     </button>
@@ -114,13 +116,13 @@ const ProjectCard = ({ project }: { project: Project }) => {
 
           {/* Scrollable content */}
           <ScrollArea className="flex-1" type="always" data-lenis-prevent>
-            <div className="px-8 py-8">
+            <div className="px-4 sm:px-8 py-4 sm:py-8">
               {/* Tech stack */}
               <motion.div
                 initial={{ opacity: 0, y: 12 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.4, delay: 0.1 }}
-                className="flex flex-col md:flex-row gap-6 md:gap-10 mb-10"
+                className="flex flex-col md:flex-row gap-6 md:gap-10 mb-6 sm:mb-10"
               >
                 {project.skills.frontend?.length > 0 && (
                   <div className="flex flex-col items-center md:items-start gap-2">

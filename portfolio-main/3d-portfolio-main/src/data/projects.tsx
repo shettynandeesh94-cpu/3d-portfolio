@@ -139,6 +139,16 @@ const PROJECT_SKILLS = {
     fg: "white",
     icon: <span className="text-xs font-bold">🎈</span>,
   },
+  ts: brand("TypeScript", "typescript-mono.svg"),
+  tailwind: brand("Tailwind CSS", "tailwind-css-mono.svg"),
+  shadcn: brand("Shadcn UI", "shadcn-ui-mono.svg"),
+  nextjs: brand("Next.js", "nextdotjs-mono.svg"),
+  ai: {
+    title: "AI & LLM",
+    bg: "black",
+    fg: "white",
+    icon: <span className="text-xs font-bold">🤖</span>,
+  },
   nlp: {
     title: "NLP",
     bg: "black",
@@ -312,60 +322,70 @@ const projects: Project[] = [
     },
   },
   {
-    id: "cinerec",
-    category: "Database Project",
-    date: "Jan 2025",
-    title: "CineREC - DBMS Project",
+    id: "govtwatch-ai",
+    category: "AI & Automation Platform",
+    date: "2026",
+    title: "GovtWatch-AI",
     src: "/assets/projects-screenshots/portfolio/landing.png",
     screenshots: [],
     skills: {
       frontend: [
-        PROJECT_SKILLS.html,
-        PROJECT_SKILLS.css,
-        PROJECT_SKILLS.js,
-        PROJECT_SKILLS.bootstrap,
+        PROJECT_SKILLS.react,
+        PROJECT_SKILLS.ts,
+        PROJECT_SKILLS.tailwind,
+        PROJECT_SKILLS.shadcn,
       ],
       backend: [
-        PROJECT_SKILLS.php,
-        PROJECT_SKILLS.mysql,
+        PROJECT_SKILLS.python,
+        PROJECT_SKILLS.ai,
+        PROJECT_SKILLS.nlp,
       ],
     },
-    live: "#",
+    live: "https://govtwatch-ai.vercel.app/",
     github: "#",
     get content() {
       return (
         <div>
           <TypographyP className="font-mono text-2xl text-center">
-            A dynamic movie information platform with a secure admin panel for
-            content management.
+            AI-powered real-time government website and regulatory document change monitoring platform.
           </TypographyP>
           <TypographyP className="font-mono ">
-            Designed and built a movie information platform using PHP and MySQL
-            with a Bootstrap-powered responsive frontend. The platform allows
-            users to browse, search, and explore detailed information about
-            films, while administrators manage content through a secure admin
-            panel.
+            GovtWatch-AI monitors thousands of Indian central and state government portals around the clock. Powered by intelligent crawlers and generative AI models, the platform detects policy updates in real time, generates concise executive summaries, performs side-by-side document diffs, and alerts compliance and legal teams instantly.
           </TypographyP>
           <ProjectsLinks live={this.live} repo={this.github} />
 
-          <TypographyH3 className="my-4 mt-8">
-            Movie Database & Search
+          {/* ── LIVE DEMO ── */}
+          <TypographyH3 className="my-4 mt-8 flex items-center gap-2">
+            <span className="inline-block w-2 h-2 rounded-full bg-green-400 animate-pulse" />
+            Live Demo
+          </TypographyH3>
+          <p className="font-mono mb-4 text-sm text-muted-foreground">
+            Explore the live platform directly below — track government websites, view AI summaries, and monitor policy updates.
+          </p>
+          <LiveDemoEmbed
+            url="https://govtwatch-ai.vercel.app/"
+            title="GovtWatch-AI"
+          />
+
+          <TypographyH3 className="my-4 mt-10">
+            Automated Website & Policy Monitoring
           </TypographyH3>
           <p className="font-mono mb-2">
-            Built an optimized database schema for efficient retrieval of film
-            data and user interactions. Users can search and filter movies by
-            various criteria, view detailed information including cast, genre,
-            ratings, and reviews with fast query performance.
+            Tracks government websites (such as SEBI, MeitY, DoE, GeM, MRPL, and state portals) with automated recurring scan intervals, instantly catching modifications, gazettes, and new circulars.
           </p>
 
           <TypographyH3 className="my-4 mt-8">
-            Admin Panel & Content Management
+            AI-Powered Summaries & Document Diffs
           </TypographyH3>
           <p className="font-mono mb-2">
-            The secure admin panel provides full content management capabilities
-            - adding new movies, editing existing entries, managing user reviews,
-            and monitoring platform activity. Built with PHP sessions for
-            authentication and prepared statements for SQL injection prevention.
+            Converts dense multi-page government notifications and PDFs into concise, key-point summaries with risk assessment scores and side-by-side line level change comparisons.
+          </p>
+
+          <TypographyH3 className="my-4 mt-8">
+            Smart Alerts & Analytics
+          </TypographyH3>
+          <p className="font-mono mb-2">
+            Delivers critical threshold-based alerts across email, in-app notifications, and webhooks while visualizing policy update trends across ministries, departments, and timelines.
           </p>
         </div>
       );
