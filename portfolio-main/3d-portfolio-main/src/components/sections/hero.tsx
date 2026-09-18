@@ -49,14 +49,12 @@ const HeroSection = () => {
                     <TooltipTrigger asChild>
                       <h1
                         className={cn(
-                          "leading-none text-slate-800 dark:text-slate-100 text-center md:text-left tracking-tight",
-                          "font-bold text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl mt-2 mb-3",
-                          "cursor-default text-edge-outline font-display break-words"
+                          "leading-tight text-slate-800 dark:text-slate-100 text-center md:text-left tracking-tight",
+                          "font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl mt-2 mb-3",
+                          "cursor-default text-edge-outline font-display whitespace-nowrap select-none"
                         )}
                       >
-                        {config.author.split(" ")[0]}
-                        <br className="hidden md:block" />{" "}
-                        {config.author.split(" ")[1]}
+                        {config.author}
                       </h1>
                     </TooltipTrigger>
                     <TooltipContent
